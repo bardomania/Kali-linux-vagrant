@@ -55,6 +55,10 @@ Vagrant.configure("2") do |config|
     apt install tldr -y
     # Cutter for reverse
     apt install radare2-cutter -y
+    # Install Impacket
+    git clone https://github.com/SecureAuthCorp/impacket.git /opt/impacket
+    apt install python3-impacket
+    cd /opt/impacket/ && python3 ./setup.py install
     # Set password back to nothing
     PASSWORD=''
   SHELL
