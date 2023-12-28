@@ -59,6 +59,9 @@ Vagrant.configure("2") do |config|
     git clone https://github.com/SecureAuthCorp/impacket.git /opt/impacket
     apt install python3-impacket
     cd /opt/impacket/ && python3 ./setup.py install
+    # Install man in the middle 6
+    cd /opt && git clone https://github.com/dirkjanm/mitm6.git
+    cd /opt/mitm6/ && pip3 install .
     # Set password back to nothing
     PASSWORD=''
   SHELL
